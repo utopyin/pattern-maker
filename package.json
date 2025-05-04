@@ -1,0 +1,13 @@
+{
+  "name": "pattern-maker",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@vercel/edge": "^1.2.1"
+  }
+}
