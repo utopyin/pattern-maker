@@ -6,9 +6,65 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<meta charset="utf-8" />
+		<style>
+			#canvas-container {
+				max-width: 800px;
+				max-height: 600px;
+				margin: 20px auto;
+				overflow: hidden;
+			}
+			#defaultCanvas0 {
+				width: 100%;
+				height: auto;
+			}
+			.image-preview {
+				width: 100px;
+				height: 100px;
+				object-fit: contain;
+				margin: 10px;
+				border: 1px solid #ccc;
+			}
+			.upload-container {
+				margin: 10px 0;
+			}
+			.controls {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				margin: 10px 0;
+			}
+			.dimension-inputs {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+			}
+		</style>
 	</head>
 	<body>
-		<div id="download-container"></div>
+		<div class="upload-container">
+			<label for="sourceImage">Source Image:</label>
+			<input type="file" id="sourceImage" accept="image/*">
+			<img id="sourcePreview" class="image-preview">
+		</div>
+		<div class="upload-container">
+			<label for="patternImage">Pattern Image:</label>
+			<input type="file" id="patternImage" accept="image/*">
+			<img id="patternPreview" class="image-preview">
+		</div>
+		<div class="controls">
+			<div class="dimension-inputs">
+				<label for="outputWidth">Width:</label>
+				<input type="number" id="outputWidth" value="">
+				<label for="outputHeight">Height:</label>
+				<input type="number" id="outputHeight" value="">
+			</div>
+			<span id="download-container"></span>
+		</div>
+
+		<div id="canvas-container">
+			<!-- Canvas will be placed here by p5.js -->
+		</div>
+
 		<script src="sketch.js"></script>
 	</body>
 </html>
